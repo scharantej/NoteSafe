@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Note-Taking App</title>
+</head>
+<body>
+<h1>Search Notes</h1>
+<form action="/search-notes" method="get">
+<label for="query">Search Notes:</label>
+<input type="text" name="query" id="query">
+</form>
+<br>
+{% for note in notes %}
+<div>
+<h2>{{ note.title }}</h2>
+<p>{{ note.body }}</p>
+<a href="/edit-note/{{ note.id }}">Edit</a>
+<a href="/delete-note/{{ note.id }}">Delete</a>
+</div>
+{% endfor %}
+</body>
+</html>
+
+
