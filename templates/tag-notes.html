@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Note-Taking App</title>
+</head>
+<body>
+<h1>Tag Notes</h1>
+<form action="/tag-notes" method="post">
+<label for="tags">Tags:</label>
+<input type="text" name="tags" id="tags">
+<br>
+{% for note in notes %}
+<input type="checkbox" name="note_ids" value="{{ note.id }}"> {{ note.title }}
+<br>
+{% endfor %}
+<br>
+<input type="submit" value="Tag Notes">
+</form>
+</body>
+</html>
+
